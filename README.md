@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 AI SaaS Platform
 
-## Getting Started
+A full-stack AI SaaS application built with Next.js that provides multiple AI-powered tools like conversation, code generation, image creation, music, and video generation.
 
-First, run the development server:
+---
 
-```bash
+## ✨ Features
+
+* 💬 AI Conversation (Chat)
+* 💻 Code Generation
+* 🖼️ Image Generation
+* 🎵 Music Generation
+* 🎥 Video Generation
+* 🔐 Authentication (Clerk)
+* 📊 API Usage Limits
+* 💳 Stripe Subscription (Pro Plan)
+* ⚡ Modern UI with Tailwind CSS & ShadCN
+* 🧠 Powered by OpenAI & Replicate APIs
+
+---
+
+## 🛠️ Tech Stack
+
+* **Framework:** Next.js (App Router)
+* **Frontend:** React, Tailwind CSS, ShadCN UI
+* **Backend:** Next.js API Routes
+* **Authentication:** Clerk
+* **AI APIs:** OpenAI, Replicate
+* **Payments:** Stripe
+* **Deployment:** Vercel
+
+---
+
+## 📂 Project Structure
+
+app/
+├── (auth)/
+├── (dashboard)/
+├── api/
+├── components/
+├── lib/
+├── hooks/
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file in the root and add:
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+OPENAI_API_KEY=
+REPLICATE_API_TOKEN=
+
+STRIPE_API_KEY=
+STRIPE_WEBHOOK_SECRET=
+
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+### 2. Install dependencies
+
+npm install
+
+### 3. Run the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will run at:
+👉 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💳 Stripe Setup
 
-## Learn More
+* Create products & pricing in Stripe Dashboard
+* Add webhook endpoint
+* Update environment variables
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔐 Authentication Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Create account on Clerk
+* Add API keys in `.env`
+* Enable authentication providers
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📊 API Limit System
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Free users have limited usage
+* Pro users get extended/unlimited access
+* Usage is tracked and shown in UI
+
+---
+
+## 🌐 Deployment
+
+Build the project:
+
+npm run build
+
+Or connect your GitHub repo to Vercel for automatic deployment.
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
