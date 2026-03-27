@@ -29,6 +29,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+       <head>
+        {/* ✅ Yeh line add kar - Puter.js load hoga */}
+        <script src="https://js.puter.com/v2/" defer></script>
+      </head>
       <body className="min-h-full flex flex-col">
       
        
