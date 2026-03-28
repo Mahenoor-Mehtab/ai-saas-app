@@ -8,16 +8,11 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { useForm } from "react-hook-form";
 import { useState } from 'react'
+import axios from 'axios'
 
 type Message = {
   role: 'user' | 'assistant'
   content: string
-}
-
-declare global {
-  interface Window {
-    puter: any
-  }
 }
 
 const ConversationPage = () => {
@@ -41,20 +36,21 @@ const ConversationPage = () => {
         content: values.prompt
       }
 
-      setMessages(prev => [...prev, userMessage])
+      // ✅ Send full history so AI remembers context
+      const newMessages = [...messages, userMessage]
 
-      const response = await window.puter.ai.chat(values.prompt)
+      // ✅ Call your API route (not Puter.js directly)
+      const response = await axios.post('/api/conversation', {
+        messages: newMessages
+      })
 
-      const assistantMessage: Message = {
-        role: 'assistant',
-        content: response?.message?.content?.[0]?.text || String(response)
-      }
-
-      setMessages(prev => [...prev, assistantMessage])
+      // ✅ Groq returns { role, content } directly
+      setMessages(prev => [...prev, userMessage, response.data])
 
       form.reset()
 
     } catch (error) {
+      // TODO: Open pro modal
       console.log(error)
     } finally {
       setLoading(false)
